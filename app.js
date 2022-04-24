@@ -4,9 +4,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require('dotenv').config()
 
-const databeaseUrl = process.env.DATABEASE_URL.replace("<password>",process.env.DATABEAS_PASSWORD);
+const databaseUrl = process.env.DATABASE_URL.replace("<password>",process.env.DATABASE_PASSWORD);
 const mongoose = require('mongoose');
-mongoose.connect(databeaseUrl)
+mongoose.connect(databaseUrl)
     .then(res=>{
         console.log("資料庫連線成功");
     })
@@ -14,6 +14,8 @@ mongoose.connect(databeaseUrl)
         console.error(error);
     })
 
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 const postRouter = require('./routes/posts');
 const app = express();
 
@@ -30,5 +32,7 @@ app.use((req, res, next)=>{
 app.use((req, res, next)=>{
     res.status(404).send('1234566')
 })
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 app.use('/posts', postRouter);
 module.exports = app;
