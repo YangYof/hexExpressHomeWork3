@@ -4,9 +4,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require('dotenv').config()
 
-const databaseUrl = process.env.DATABASE_URL.replace("<password>",process.env.DATABASE_PASSWORD);
+const dataBaseUrl = process.env.DATABASE_URL.replace("<password>",process.env.DATABASE_PASSWORD);
 const mongoose = require('mongoose');
-mongoose.connect(databaseUrl)
+mongoose.connect(dataBaseUrl)
     .then(res=>{
         console.log("資料庫連線成功");
     })
@@ -29,10 +29,16 @@ app.use((req, res, next)=>{
     console.log(res.status);
     next()
 })
-app.use((req, res, next)=>{
-    res.status(404).send('1234566')
-})
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postRouter);
+
+app.use((req, res, next)=>{
+    res.status(404).send('404 not found')
+})
+
+app.use((req, res, next)=>{
+    res.status(500).send('請稍候嘗試')
+})
+
 module.exports = app;
