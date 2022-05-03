@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "156e962b-4433-45d5-a69d-2d2e46ea74ed",
+		"name": "express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"6264012e8dfb92c48a12e923\",\n    \"name\": \"1234567\",\n    \"tags\": [\n        \"貓貓\",\n        \"meow\",\n        \"讚\"\n    ],\n    \"type\": \"group\",\n    \"image\": \"http://dummyimage.com/197x100.png/dddddd/000000\",\n    \"content\": \"at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum\",\n    \"likes\": 1898,\n    \"comments\": 134124\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tranquil-savannah-59361.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"tranquil-savannah-59361",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tranquil-savannah-59361.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"tranquil-savannah-59361",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllPosts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://tranquil-savannah-59361.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"tranquil-savannah-59361",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAndDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tranquil-savannah-59361.herokuapp.com/posts/626519f375db388ccff2ed05",
+					"protocol": "https",
+					"host": [
+						"tranquil-savannah-59361",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"626519f375db388ccff2ed05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAndUpdate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"123456677\",\n    \"tags\": [\n        \"貓貓\",\n        \"meow\"\n    ],\n    \"type\": \"person\",\n    \"image\": \"\",\n    \"content\": \"0836449\",\n    \"likes\": 1832198,\n    \"comments\": 134132124\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tranquil-savannah-59361.herokuapp.com/posts/626519f475db388ccff2ed07",
+					"protocol": "https",
+					"host": [
+						"tranquil-savannah-59361",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"626519f475db388ccff2ed07"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
